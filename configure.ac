@@ -17,9 +17,9 @@ AC_CHECK_LIB([rt], [main], ,
 	     AC_MSG_ERROR([librt is required but was not found]))
 
 PKG_CHECK_MODULES([SYSTEMD], [systemd])
-PKG_CHECK_MODULES([LIBSYSTEMD_DAEMON], [libsystemd-daemon])
-AC_SUBST(LIBSYSTEMD_DAEMON_CFLAGS)
-AC_SUBST(LIBSYSTEMD_DAEMON_LIBS)
+PKG_CHECK_MODULES([LIBSYSTEMD], [libsystemd])
+AC_SUBST(LIBSYSTEMD_CFLAGS)
+AC_SUBST(LIBSYSTEMD_LIBS)
 
 AC_ARG_WITH([systemduserunitdir], AC_HELP_STRING([--with-systemduserunitdir=DIR],
 	[path to systemd user service directory]), [path_systemduserunit=${withval}],
